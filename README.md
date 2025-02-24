@@ -1,3 +1,3 @@
 # AFC_Spring_2025
 
-I love bulldogs.
+I love cats.
