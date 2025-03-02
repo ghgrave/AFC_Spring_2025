@@ -16,12 +16,12 @@
 //   return el.toLocaleLowerCase()
 // })
 // console.log(newFruits.sort());
-  
+
 
 let numbers = [10, 1, 100, 3, 34, 11]
-numbers.sort(function(a,b){
-  // return a-b // ascending
-  return b.age-a.age // descending
+numbers.sort(function (a, b) {
+    // return a-b // ascending
+    return b.age - a.age // descending
 })
 console.log(numbers);
 

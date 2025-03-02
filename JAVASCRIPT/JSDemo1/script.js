@@ -14,7 +14,7 @@
 // {
 //   let dog = "meow"
 //   console.log("Inside:", dog);
-  
+
 // }
 // console.log(dog);
 

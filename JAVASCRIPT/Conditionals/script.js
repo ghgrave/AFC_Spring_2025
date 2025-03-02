@@ -22,8 +22,8 @@ else console.log("You are a minor");
 
 // Quartanary Operator
 let result =
-  age > 18
-    ? "You are an adult"
-    : age === 18
-      ? "Happy Birthday!!!"
-      : "You are a minor";
+    age > 18
+        ? "You are an adult"
+        : age === 18
+            ? "Happy Birthday!!!"
+            : "You are a minor";

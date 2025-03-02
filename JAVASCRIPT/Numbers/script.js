@@ -1,4 +1,3 @@
-
 // console.log(Number(age));
 // console.log(Number(age2));
 
