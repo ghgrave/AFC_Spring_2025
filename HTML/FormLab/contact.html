@@ -6,8 +6,25 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FormLab: Contact</title>
+<!--    internal styling-->
+    <style>
+        h1 {
+            background-color: aqua;
+        }
+
+        #doggy {
+            color: red;
+        }
+
+        .horse {
+            border: ridge 5px red;
+        }
+
+    </style>
 </head>
 <body>
+<h1 id="doggy" class="horse">Hello</h1>
+<h1 class="horse">Goodbye</h1>
 <a href="index.html" target="_blank">Home</a>
 <a href="#">Contact</a>
 <form action="/sendTheData" method="get">
@@ -41,10 +58,55 @@
                 id=""
                 placeholder="Tel (xxx-xxx-xxxx)...."
                 required
-                pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                title="pattern  xxx-xxx-xxxx"
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
         >
     </label>
     <br>
+    <label >Age:
+        <input type="number" name="age" id="" min="21" max="100">
+    </label>
+    <br>
+    <label >Password:
+        <input type="password" name="pw" id="">
+    </label>
+    <br>
+    <label >Are you alive?
+        <br>
+        Yes<input type="radio" name="isAlive" id="" value="yes" >
+        No <input type="radio" name="isAlive" id="" value="no">
+        Zombie<input type="radio" name="isAlive" id="" value="zombie" checked>
+        <br>
+        Married?
+        <br>
+        Yes<input type="radio" name="isMarried" id="">
+        No <input type="radio" name="isMarried" id="">
+        Complicated<input type="radio" name="isMarried" id="">
+    </label>
+    <br>
+    <label >Colors:
+        <br>
+        <input type="checkbox" name="color1" id="" value="blue">Blue
+        <input type="checkbox" name="color2" id="" value="red">Red
+        <input type="checkbox" name="color3" id="" value="green">Green
+        <input type="checkbox" name="color4" id="" value="orange">Orange
+    </label>
+    <br>
+    <label >
+        Tell us more about yourself!
+        <br>
+        <textarea rows="3" cols="20" maxlength="" name="moreDescription"></textarea>
+    </label>
+    <br>
+    <label >
+        State:
+        <select name="state" id="">
+            <option value="tx">TX</option>
+            <option value="ca">CA</option>
+            <option value="in">IN</option>
+
+        </select>
+    </label>
     <button type="submit">Submit</button>
     <button type="reset">Reset</button>
 </form>
