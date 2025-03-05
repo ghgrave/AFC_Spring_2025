@@ -1,0 +1,22 @@
+/*body {*/
+/*    background-color: red;*/
+/*}*/
+
+h1:hover {
+    background-color: purple;
+}
+
+button:hover {
+    color: green;
+    cursor: grab;
+}
+
+div {
+    height: 200px;
+    width: 300px;
+    border: 2px red solid;
+}
+
+img    {
+    width: 100%;
+}
