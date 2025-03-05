@@ -1,0 +1,76 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+/*!*#burger {*!*/
+/*!*    color: orange;*!*/
+/*!*}*!*/
+
+/*!*#onions {*!*/
+/*!*    color: green;*!*/
+/*!*}*!*/
+
+/*!*#fries {*!*/
+/*!*    color: red;*!*/
+/*!*}*!*/
+
+/*!*.strawberry {*!*/
+/*!*    background-color: red;*!*/
+/*!*}*!*/
+
+/*!*.blueberry {*!*/
+/*!*    background-color: blue;*!*/
+/*!*}*!*/
+
+/** {*/
+/*    margin: 0;*/
+/*    padding:0;*/
+/*    border:none;*/
+/*}*/
+/*p {*/
+/*    background-color: blue;*/
+/*    padding: 10px;*/
+/*    margin: 20px;*/
+/*    !*border-style: groove;*!*/
+/*    !*border-color: green;*!*/
+/*    !*border-width: 10px;*!*/
+/*    border: groove 10px red;*/
+/*}*/
+
+/*.blueberry > p*/
+
+/*li a {*/
+/*    color: green;*/
+/*}*/
+
+/*body {*/
+/*    color: green;*/
+/*}*/
+
+/*ul {*/
+/*    color: purple;*/
+/*}*/
+
+/*!*any element with both company AND red classes*!*/
+/*.company.red {*/
+/*!*    *!*/
+/*}*/
+
+/*!*all elements with class red INSIDE of elements with company class*!*/
+/*.company .red {*/
+/*!*    *!*/
+/*}*/
+
+/*!*all elements with class red AND company class*!*/
+/*.company, .red{*/
+/*    !*    *!*/
+/*}*/
+
+.company {
+    color: green !important;
+}
+
+.company {
+    color: red;
+}
