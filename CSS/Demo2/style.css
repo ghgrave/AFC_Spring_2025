@@ -14,9 +14,13 @@ button:hover {
 div {
     height: 200px;
     width: 300px;
+    border-right: 5px green dashed;
     border: 2px red solid;
+
 }
 
 img    {
     width: 100%;
+    padding: 25px 50px 10px 12px;
 }
+
