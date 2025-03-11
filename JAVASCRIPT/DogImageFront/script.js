@@ -28,7 +28,9 @@ button[0].addEventListener("click", ()=> {
             }
         })
         .then(parsedData => {
+            let img = document.querySelector("img")
             console.log(parsedData)
+            img.setAttribute("src", parsedData.message)
         }) // deal with parsed data
         .catch(error => {
             console.log(error)
