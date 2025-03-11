@@ -1,0 +1,40 @@
+
+
+.div1 {
+    height: 200px;
+    width: 200px;
+    background-color: #008000;
+    position: relative;
+    /*top: 200px;*/
+    /*left: 100px;*/
+    margin: 0 auto;
+    text-align: inherit;
+}
+
+.div2 {
+    height: 200px;
+    width: 200px;
+    background-color: red;
+    /*z-index: ;*/
+}
+
+.container {
+    height: 300px;
+    width: 300px;
+    background-color: grey;
+    position: relative;
+}
+
+.innerDiv {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    position: relative;  /* normal place in the DOM/HTML layout 8/
+    /*position: absolute;  !* STOP!!! Pull out of DOM/layout!!!*!*/
+    /*bottom: 0;*/
+    /*right: 50px;*/
+    overflow: scroll;
+}
+body {
+    text-align: center;
+}
