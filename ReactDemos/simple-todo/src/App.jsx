@@ -6,13 +6,29 @@ const App = () => {
   const [todos, setTodos] = useState([])
   const [newTodo, setNewTodo] = useState("")
 
+    // example of how to create an object of initial state
+    const person = {
+            firstName: "",
+            lastName: "",
+            address1: "",
+            address2: ""
+    }
+    // pass person object of initial values into useState()
+    const [people, setPeople] = useState(person)
+
+    // // ORRRRR you can do it the hard way!!!!!
+    // const [firstName, setFirstName] = useState("")
+    // const [lastName, setLastName] = useState("")
+    // const [address1, setAddress1] = useState("")
+    // const [address2, setAddress2] = useState("")
+
   function handleChange(event) {
       setNewTodo(event.target.value)
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    const newTodos = [...todos, newTodo]
+    const newTodos = [...todos].push(newTodo)
     setTodos(newTodos)
     setNewTodo("")
     return true;
