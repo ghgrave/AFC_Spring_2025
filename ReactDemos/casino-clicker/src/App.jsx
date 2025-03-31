@@ -1,9 +1,19 @@
-import { useState } from 'react'
+// hooks - functions that "hook" into react
+// and allow functionality
+// is possible to create custom hooks
+import { useState, useEffect } from 'react'
 import './App.css'
 
 function App() {
     const [count, setCount] = useState(7)
     const [isSeven, setIsSeven] = useState(false)
+
+    // useEffect is a hook aka function
+    // takes two arguments: cb() and list of dependencies
+    // useEffect(cb(), deps[])
+    useEffect(()=>{
+        setIsSeven(count === 7)
+    }, []) // empty brace = only run on first render!
 
     const handleClick = () => {
         // create random number
