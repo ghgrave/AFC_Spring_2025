@@ -1,9 +1,24 @@
 import axios from "axios"
-import log from "eslint-plugin-react/lib/util/log.js";
-
+import {useState, useEffect} from "react"
 
 const App = () => {
     const baseURL = "https://dog.ceo/api"
+    const [imagePath, setImagePath] = useState("")
+
+    useEffect( ()=>{
+        let route = "breeds/image/random"
+        let endpoint = `${baseURL}/${route}`
+        axios.get(endpoint)
+            .catch(err => {
+                console.error("Error: ", err)
+            })
+            .then(response => {
+                setImagePath(response.data.message)
+                console.log("Response: ", response.data.message)
+            })
+        }, []
+    )
+
     const handleClick = () => {
         // console.log("Clicked")
         let route = "breeds/image/random"
@@ -12,13 +27,17 @@ const App = () => {
             .catch(err => {
                 console.error("Error: ", err)
             })
-            .then(response => console.log("Response: ", response.data.message))
+            .then(response => {
+                setImagePath(response.data.message)
+                console.log("Response: ", response.data.message)
+            })
+
     }
     return (
         <>
             <h1>Dog Image Generator</h1>
             <button onClick={handleClick}>Click Me</button>
-            <img src="" alt=""/>
+            <img src={imagePath} alt=""/>
         </>
         
         
