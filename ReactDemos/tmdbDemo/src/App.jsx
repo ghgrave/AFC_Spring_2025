@@ -4,6 +4,7 @@ import Contact from "./components/Contact.jsx"
 import About from "./components/About.jsx";
 import axios from "axios"
 import MovieCard from "./components/MovieCard.jsx";
+import SearchAppBar from "./components/AppBar.jsx";
 import {useState} from "react";
 
 
@@ -39,8 +40,10 @@ const App = () => {
     };
     return (
         <>
+
             <h1>App Comp</h1>
             <Router>
+                <SearchAppBar></SearchAppBar>
                 <div className="App">
                     <ul>
                         <li>
@@ -50,9 +53,9 @@ const App = () => {
                         <li>
                             <Link to="/about">About</Link>
                         </li>
-                        <li>
-                            <Link to="/contact">Contact</Link>
-                        </li>
+                        {/*<li>*/}
+                        {/*    <Link to="/contact">Contact</Link>*/}
+                        {/*</li>*/}
                     </ul>
                     <hr/>
                     <Routes>
