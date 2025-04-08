@@ -14,9 +14,17 @@ const App = () => {
     function handleSubmit(evt) {
         evt.preventDefault()
         console.log(formData)
+    //     send to database
+    //     axios call
     }
 
-    function handleChange() {
+    function handleChange(event) {
+        // console.log(event)
+        setFormData(
+            {...formData, // spread operator so we do not lose current values
+                [event.target.name]: event.target.value} // integrate current values into prev values
+        )
+        console.log(formData)
 
     }
 
@@ -32,7 +40,7 @@ const App = () => {
             </label>
             <br/>
             <label>Age:
-                <input type="number" name="age" value={age}/>
+                <input type="number" name="age" value={age} onChange={handleChange}/>
             </label>
             <br/>
             <button type="submit">Submit</button>
