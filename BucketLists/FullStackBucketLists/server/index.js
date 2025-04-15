@@ -4,11 +4,16 @@
 const express = require("express")
 // create an instance of our application
 const app = express()
+const cors = require("cors")
 
 // logging tool
 // this will help with routing and params
 const logger = require("morgan")
 app.use(logger("dev"))
+
+// allows all sites to access our API, e.g. localhost:3000
+// can access this API
+app.use(cors())
 
 // import fake data from mockdata.js file
 const {bucketlist} = require("./mockData");
@@ -49,6 +54,7 @@ app.post("/api/bucket", (req, res)=>{
 //     what is our goal??
 //     add something to database
 //     new bucket list item
+    console.log("Backend description: ", req.body.description,)
     let newData = {
         id: newId++,
         description: req.body.description,

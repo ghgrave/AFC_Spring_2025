@@ -7,7 +7,7 @@ exports.bucketlist = [
   {
     id: 2,
     description :"Learn React",
-    isComplete:  false
+    isComplete:  true
   },
   {
     id: 3,
