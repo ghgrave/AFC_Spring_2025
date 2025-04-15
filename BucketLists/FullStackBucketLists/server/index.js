@@ -81,6 +81,37 @@ app.delete("/api/bucket/:id", (req, res)=>{
     }
 })
 
+// Update - PUT
+app.put("/api/bucket/:id", (req, res)=>{
+    // we need the id
+    // casting a String into a Number
+    let requestedId = Number(req.params.id)
+    if(isNaN(requestedId)) {
+        res.status(404).json({message: "Not a number!!!!"})
+    }
+    if(!requestedId){
+        res.status(404).json({message: "No id supplied."})
+    }
+    let item = bucketlist.find(
+        (el)=>{
+            return requestedId === el.id
+        }
+    )
+//     returning an element
+//     {
+//          id: 2,
+//          description: "Learn React",
+//          isComplete: false => true
+//      }
+    if(item) {
+        item.isComplete  = !item.isComplete
+        let receipt = item
+        res.json(receipt)
+    } else  {
+        res.status(404).json({error: "Unable to find requested ID."})
+    }
+})
+
 
 //LISTENER
 app.listen(port, ()=>{
