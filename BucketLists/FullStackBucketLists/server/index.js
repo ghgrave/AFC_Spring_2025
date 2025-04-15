@@ -59,6 +59,23 @@ app.post("/api/bucket", (req, res)=>{
     res.json(receipt)
 })
 
+// DELETE route
+app.delete("/api/bucket/:id", (req, res)=>{
+//     what do we need to think about?
+    let requestedId = Number(req.params.id)
+//     findIndex()
+    let bucketIndex = bucketlist.findIndex((element)=>{
+
+        return element.id === requestedId
+    })
+    console.log("Index: ", bucketIndex)
+    let removedObj = bucketlist.splice(bucketIndex, 1)
+    // pretending this came from the database
+    let receipt = removedObj
+    res.json(receipt)
+})
+
+
 //LISTENER
 app.listen(port, ()=>{
     console.log(`Bucketlist server running on port ${port}`)
