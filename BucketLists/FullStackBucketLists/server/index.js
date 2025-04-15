@@ -61,18 +61,24 @@ app.post("/api/bucket", (req, res)=>{
 
 // DELETE route
 app.delete("/api/bucket/:id", (req, res)=>{
-//     what do we need to think about?
+    // casting a String into a Number
     let requestedId = Number(req.params.id)
-//     findIndex()
+    if(isNaN(requestedId)) {
+        res.status(404).json({message: "Not a number!!!!"})
+    }
+    // find the index of existing comparison
     let bucketIndex = bucketlist.findIndex((element)=>{
-
         return element.id === requestedId
     })
-    console.log("Index: ", bucketIndex)
-    let removedObj = bucketlist.splice(bucketIndex, 1)
-    // pretending this came from the database
-    let receipt = removedObj
-    res.json(receipt)
+    if(bucketIndex !== -1){
+        console.log("Index: ", bucketIndex)
+        let removedObj = bucketlist.splice(bucketIndex, 1)
+        // pretending this came from the database
+        let receipt = removedObj
+        res.json(receipt)
+    } else {
+        res.status(404).json({error: "Unable to find requested ID."})
+    }
 })
 
 
