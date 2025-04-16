@@ -139,6 +139,7 @@ const App = () =>{
                         type="text"
                         name="newItem"
                         onChange={handleChange}
+                        value={newItem}
                     />
                 </label>
                 <button type="submit">Save</button>

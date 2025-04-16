@@ -53,13 +53,13 @@ EXAMPLE data:
 }
 
 DELETE
-1) endpoint - DELETE /api/bucket/<id>
+1) endpoint - DELETE /api/bucket/:id
 2) JSON
 3) ONE thing - "receipt" from the Db
 4) Return ONE object
 
 UPDATE
-1) endpoint - PUT /api/bucket/<id>
+1) endpoint - PUT /api/bucket/:id
 2) JSON
 3) ONE thing - "receipt" from the Db
 4) Return ONE object
