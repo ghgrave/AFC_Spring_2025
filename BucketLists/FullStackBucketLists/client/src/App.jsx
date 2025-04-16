@@ -20,16 +20,77 @@ const App = () =>{
         }
     , [])
 
+    // PUT - UPDATE
+    const clickHandler = (event) => {
+        let route = `api/bucket/${event.target.id}`
+        let endpoint = `${baseUrl}/${route}`
+        let options = {
+            method: "put",
+            url: endpoint
+        }
+        axios(options)
+            .then(result => {
+                console.log("Front end update result: ", result.data)
+                let copyOfBucketList = [...bucketList]
+                let requestedItem = copyOfBucketList.find(item => {
+                    // -0 converts to number by default
+                    return item.id === event.target.id-0
+                })
+                // if an item was found, flip its isComplete
+                if(requestedItem) {
+                    requestedItem.isComplete = !requestedItem.isComplete;
+                }
+                // replace original state with the copy
+                setBucketList(copyOfBucketList);
+            })
+            .catch(err => {
+                console.log(err)
+            })
+
+    };
+
+
+    const deleteHandler = (bucketId) => {
+        let route = `api/bucket/${bucketId}`
+        let endpoint = `${baseUrl}/${route}`
+        let options = {
+            method: "delete",
+            url: endpoint
+        }
+        axios(options)
+            .then(result => {
+                console.log("Delete result: ", result)
+                let filteredBucketList = bucketList.filter(item =>{
+                    return item.id !== bucketId
+                })
+                setBucketList(filteredBucketList)
+            })
+            .catch(err => {
+                console.log("Error deleting from front end: ", err)
+            })
+    };
+
     let myList = bucketList.map((el)=>{
         return <li key={el.id}
                         className={el.isComplete ? "completed":  ""}
-                    >{el.description}</li>
+                        onClick={clickHandler}
+                        id={el.id}
+                    >{el.description}
+                    <button
+                        onClick={evt => {
+                            evt.stopPropagation()
+                            deleteHandler(el.id)
+                        }}
+                    >Delete</button>
+        </li>
     })
 
     const handleChange = (evt) => {
         setNewItem(evt.target.value)
     };
 
+
+    // POST - CREATE
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -52,6 +113,13 @@ const App = () =>{
         axios(options)
             .then(result => {
                 console.log("Front end result: ", result)
+                let newItem = result.data
+                // let newArray = [...bucketList, newItem]
+                setBucketList([...bucketList, newItem])
+                // DO NOT do this!!!!!
+                // do not mutate state directly
+                // let newArray2 = bucketList.push(newItem)
+                setNewItem("")
             })
             .catch(err => {
                 console.log(err)
