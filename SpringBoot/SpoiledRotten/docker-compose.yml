@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  postgres-db:
+    container_name: spoiled_rotten_container
+    image: postgres # use latest official postgres version
+    restart: always
+    environment:
+      POSTGRES_USER: spoiled
+      POSTGRES_PASSWORD: rotten
+      POSTGRES_DB: spoiled_rotten
+      POSTGRES_HOST_AUTH_METHOD: password
+    ports:
+      - "5436:5432"
+
+volumes:
+  postgresql_data:
+    driver: local

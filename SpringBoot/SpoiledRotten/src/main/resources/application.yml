@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: SpoiledRotten
+
+  datasource:
+    url: jdbc:postgresql://localhost:5436/spoiled_rotten
+    driver-class-name: org.postgresql.Driver
+    username: spoiled
+    password: rotten
+  flyway:
+    enabled: true
+    locations: classpath:db.migration
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+server:
+  port: 8080
