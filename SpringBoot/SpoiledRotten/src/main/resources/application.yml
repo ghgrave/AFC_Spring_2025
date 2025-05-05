@@ -16,3 +16,6 @@ spring:
       ddl-auto: none
 server:
   port: 8080
+tmdb:
+  api:
+    key: 4de3f13a4cdd05831b95a97d3b3e2da6
