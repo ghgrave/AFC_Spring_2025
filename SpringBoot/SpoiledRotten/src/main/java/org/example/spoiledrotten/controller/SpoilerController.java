@@ -21,6 +21,7 @@ public class SpoilerController {
     @GetMapping("/tmdb/{tmdbId}")
     public ResponseEntity<List<Spoiler>> getSpoilersByTmdbId(@PathVariable Integer tmdbId) {
         List<Spoiler> spoilers = spoilerRepository.findByMovie_TmdbId(tmdbId);
+        System.out.println("Found " + spoilers.size() + " spoilers for TMDb ID: " + tmdbId);
         return ResponseEntity.ok(spoilers);
     }
 }

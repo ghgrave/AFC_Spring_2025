@@ -16,16 +16,20 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Integer tmdb_id;
+    @Column(name = "tmdb_id")
+    private Integer tmdbId;
 
     private String title;
 
-    private Integer release_year;
+    @Column(name = "release_year")
+    private Integer releaseYear;
 
-    private Boolean is_deleted = false;
+    @Column(name = "is_deleted")
+    private Boolean isDeleted = false;
 
-    private Boolean add_to_watchlist = false;
+    @Column(name = "add_to_watchlist")
+    private Boolean addToWatchlist = false;
 
-    private Boolean is_ignored = false;
+    @Column(name = "is_ignored")
+    private Boolean isIgnored = false;
 }
-

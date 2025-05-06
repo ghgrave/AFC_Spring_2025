@@ -17,21 +17,26 @@ public class Spoiler {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Many spoilers can belong to one movie
+    // Join to movie using movie_id FK
     @ManyToOne
     @JoinColumn(name = "tmdb_id", nullable = false)
     private Movie movie;
 
-    @Column(columnDefinition = "TEXT")
-    private String spoiler_text;
+    @Column(name = "spoiler_text", columnDefinition = "TEXT")
+    private String spoilerText;
 
-    private String spoiler_type; // stores values like "👀 Surprise cameo!"
+    @Column(name = "spoiler_type")
+    private String spoilerType; // e.g., "👀 Surprise cameo!"
 
-    private Boolean is_verified = false;
+    @Column(name = "is_verified")
+    private Boolean isVerified = false;
 
-    private String submitted_by; // username or null
+    @Column(name = "submitted_by")
+    private String submittedBy;
 
-    private LocalDateTime created_at = LocalDateTime.now();
+    @Column(name = "created_at")
+    private LocalDateTime createdAt = LocalDateTime.now();
 
-    private Boolean is_deleted = false;
+    @Column(name = "is_deleted")
+    private Boolean isDeleted = false;
 }
